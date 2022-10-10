@@ -1,0 +1,68 @@
+Programming Project Coursework 1
+Name of Student: Vindhyaa Saravanan
+Student ID: 201542641
+Email: sc21vs@leeds.ac.uk
+
+Testing Plan for Assignment 1
+
+All tests print program error string and error code to the terminal.
+
+Tests Common to All Programs:
+No arguments
+Wrong number of arguments
+Bad filename
+Non-Readable file
+Bad magic number
+Large comment
+Bad dimensions (-1)
+Bad dimensions (65536)
+Bad max gray value
+Too little data
+Too much data
+Non-Writeable file
+
+Program-Specific Testing:
+
+PGMECHO
+ASCII file with correct format echoed correctly
+Binary file with correct format echoed correctly
+
+PGMCOMP
+Two identical ASCII files with correct format compared correctly
+Two non-identical ASCII files with different heights compared correctly
+Two non-identical ASCII files with different widths compared correctly
+Two non-identical ASCII files with different pixel values compared correctly
+Two identical Binary files with correct format compared correctly
+Two non-identical Binary files with different heights compared correctly
+Two non-identical Binary files with different widths compared correctly
+Two non-identical Binary files with different pixel values compared correctly
+
+PGMA2B
+ASCII file in correct format converted to Binary correctly
+Binary input file rejected correctly
+
+PGMB2A
+Binary file in correct format converted to ASCII correctly
+ASCII input file rejected correctly
+
+PGMREDUCE
+Negative reduction factor rejected correctly
+Non-numeric reduction factor rejected correctly
+Non-divisible reduction factor rejected correctly
+6x6 ASCII file reduced by factor 2 correctly
+6x6 ASCII file reduced by factor 3 correctly
+4x4 ASCII file reduced by factor 2 correctly
+
+PGMTILE
+Negative tiling factor rejected correctly
+Non-numeric tiling factor rejected correctly
+Non-divisible tiling factor rejected correctly
+6x6 ASCII image tiled by factor 2 correctly
+6x6 ASCII image tiled by factor 3 correctly
+4x4 ASCII image tiled by factor 2 correctly
+
+PGMASSEMBLE
+No arguments
+Wrong number of arguments
+Bad filename
+Non-Readable file

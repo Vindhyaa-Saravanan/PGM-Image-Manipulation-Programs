@@ -1,0 +1,81 @@
+Programming Project Coursework 1
+Name of Student: Vindhyaa Saravanan
+Student ID: 201542641
+Email: sc21vs@leeds.ac.uk
+
+MODULAR PLAN
+All programs in this assignment use three user-defined modules:
+pgmDef.c
+pgmInput.c
+pgmOutput.c
+
+
+MODULE NAME: pgmDef.c
+FUNCTION: This module defines constants used in all the utility programs
+and defines the struct PGMFile, as well as a function to initialize it.
+
+Constants defined in this module: Exit codes for various errors, magic number standard values,
+minimum and maximum allowed maxgray and image dimensions, commentLine maximum length, etc.
+
+Functions defined in this module:
+• void initializePGMFile(struct PGMFile *pointer)
+It takes in a pgmfile struct pointer and initializes its values.
+
+
+MODULE NAME: pgmInput.c
+FUNCTION: This module defines functions related to reading from input pgm file.
+
+Functions defined in this module:
+• int getMagicNumber(struct PGMFile *pointer, FILE *inputFile, char* filename)
+Function takes in a PGMfile struct, input file stream, string filename as parameters.
+Reads magic number of given file into struct and returns relevant code
+
+• int getComment(struct PGMFile *pointer, FILE *inputFile, char* filename)
+Function takes in a PGMfile struct, input file stream, string filename as parameters.
+Reads comment of given file into struct and returns relevant code
+
+• int getHeader(struct PGMFile *pointer, FILE *inputFile, char* filename)
+Function takes in a PGMfile struct, input file stream, string filename as parameters.
+Reads header of given file into struct and returns relevant code
+
+• int imageReadASCII(struct PGMFile *pointer, FILE *inputFile, char* filename)
+Function takes in a PGMfile struct, input file stream, string filename as parameters.
+Reads ASCII data of given file into struct and returns relevant code
+
+• int imageReadBinary(struct PGMFile *pointer, FILE *inputFile, char* filename)
+Function takes in a PGMfile struct, input file stream, string filename as parameters.
+Reads Binary data of given file into struct and returns relevant code
+
+
+MODULE NAME: pgmOutput.c
+
+FUNCTION: This module implements functions related to pgm program output,
+such as writing image data to a outputfile,
+comparing two images for logical equivalence,
+reducing an image by a given factor and producing a new smaller image.
+
+Functions defined in this module:
+• int imageWriteASCII(struct PGMFile *pointer, FILE *outputFile, char *outputFilename)
+Function takes in a ASCII PGMfile struct, output file stream, output file name as parameters
+Writes data of given struct into output file and returns relevant code
+
+• int imageWriteBinary(struct PGMFile *pointer, FILE *outputFile, char *outputFilename)
+Function takes in a Binary PGMfile struct, output file stream, output file name as parameters
+Writes data of given struct into output file and returns relevant code
+
+• int imageCompareASCII(struct PGMFile *pointer1, struct PGMFile *pointer2)
+Function takes in two ASCII PGMfile structs as parameters
+Compares width, height and pixel data of both structs and returns relevant code
+
+• int imageCompareBinary(struct PGMFile *pointer1, struct PGMFile *pointer2)
+Function takes in two Binary PGMfile structs as parameters
+Compares width, height and pixel data of both structs and returns relevant code
+
+• int imageReduce(struct PGMFile *pointer1, struct PGMFile *pointer2, int reductionFactor, FILE *inputFile)
+Function takes in two PGMfile structs, input file stream, reduction factor as parameters
+Reduces data in first struct by reduction factor, stores in second struct, returns relevant code
+
+
+
+MAIN ROUTINES USING ABOVE MODULES: pgmEcho.c, pgmComp.c, pgma2b.c, pgmb2a.c, pgmReduce.c, pgmTile.c, and pgmAssemble.c.
+Modules are also reused across all programs of this assignment.
